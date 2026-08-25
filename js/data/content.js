@@ -25,10 +25,10 @@ export const CONTENT = {
   nav: {
     logo: 'IMRAN AHMED',
     links: [
-      { href: '#showcase', bn: 'ভিডিও', en: 'Video' },
-      { href: '#projects', bn: 'প্রজেক্ট', en: 'Projects' },
-      { href: '#about', bn: 'সম্পর্কে', en: 'About' },
-      { href: '#contact', bn: 'যোগাযোগ', en: 'Contact' }
+      { href: '#showcase', bn: 'Video', en: 'Video' },
+      { href: '#projects', bn: 'Project', en: 'Projects' },
+      { href: '#about', bn: 'About', en: 'About' },
+      { href: '#contact', bn: 'Contact', en: 'Contact' }
     ],
     langBn: 'বাং',
     langEn: 'EN'
