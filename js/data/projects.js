@@ -1,62 +1,67 @@
 /**
- * projects.js — project data.
- * Shape (informal): { id, index, nameBn, nameEn, descBn, descEn,
- *                      detailBn, detailEn, tags[], url|null, status: 'live'|'soon' }
+ * projects.js — the 10 projects, in display order.
+ * URLs are the owner-supplied source of truth. cats ∈ web | edu | dev | islamic | shop | interactive.
+ * Tags are derived from the supplied category only — no unverified tech claims.
  */
-
 export const projects = [
   {
-    id: 'quranbangla',
-    index: '01',
-    nameBn: 'কুরআন বাংলা ',
-    nameEn: 'QuranBangla ',
-    descBn: 'ফিচার-সমৃদ্ধ বাংলা কুরআন পিডব্লিউএ (PWA) — ওয়ার্ড-বাই-ওয়ার্ড অনুবাদ, তাফসির, হিফজ ট্র্যাকার ও সিজদাহ চিহ্নিতকরণসহ।',
-    descEn: 'A feature-rich Bengali Quran PWA with word-by-word translation, tafsir, a hifz tracker, and sajdah marking.',
-    detailBn:
-      'সম্পূর্ণ অফলাইন-প্রথম আর্কিটেকচারে তৈরি — ইনডেক্সডবি স্টোরেজ, সার্ভিস ওয়ার্কার ক্যাশিং, এবং একটি রিডার-মোড টুলবার যা পড়ার সময় নেভিগেশনকে সরিয়ে প্রসঙ্গ-সংবেদনশীল নিয়ন্ত্রণ দেয়। ১১৪টি সূরার জন্য শানে নুযূল ও ফযীলত যুক্ত করা হয়েছে বাংলায়।',
-    detailEn:
-      'Built offline-first with IndexedDB storage and service-worker caching, plus a context-aware reader-mode toolbar that replaces navigation while reading. Includes Bengali shan-e-nuzul and virtues (fazilat) for all 114 surahs.',
-    tags: ['PWA', 'Firebase', 'IndexedDB', 'Service Worker'],
-    url: 'https://quranresource.vercel.app',
-    status: 'live'
+    id: 'rupsha', mark: 'RJF', url: 'https://rupsshajf.vercel.app', cats: ['web'],
+    name: { bn: 'রূপসা জনকল্যাণ ফাউন্ডেশন', en: 'Rupsha Jonokollan Foundation' },
+    cat: { bn: 'ফাউন্ডেশন / সংগঠন', en: 'Foundation / Organization' },
+    desc: { bn: 'রূপসা জনকল্যাণ ফাউন্ডেশন ও এর সাংগঠনিক উদ্যোগগুলোর প্রতিনিধিত্বকারী একটি ডিজিটাল প্ল্যাটফর্ম।', en: 'A digital platform representing Rupsha Jonokollan Foundation and its organizational initiatives.' }
   },
   {
-    id: 'tvceditor',
-    index: '02',
-    nameBn: 'কোড এডিটর',
-    nameEn: 'Code editor',
-    descBn: 'এখানে সকল ধরনের কোডিং এডিটর রয়েছে এবং কোর্ট এডিট করে সরাসরি github এ পাবলিস্ট করারও সুবিধা রয়েছে যেটা একমাত্র tech verse করে দেখিয়েছে।',
-    descEn: 'There are all kinds of coding editors here and there is also the facility to edit the code and publish it directly on github, which is what tech verse has shown.',
-    detailBn: 'আমাদের এডিটরে সকল ধরনের ফিউচার সমৃদ্ধ রয়েছে পাইথন কোর্ট সহ সকল ধরনের ফ্লাট এবং কোড এডিট করে সরাসরি zip আইলে ডাউনলোড করা যাবে এবং json ফাইলেও ডাউনলোড করা যাবে এবং সকল ধরনের ফরমেটে কোডিং এডিট করা যাবে এবং কোড আমাদের স্টোরেজে সুবিধা করা হয়েছে যাতে আপনার কোড হারিয়ে না যায় আমাদের এখানে সকল ধরনের ফিউচার সমৃদ্ধ রয়েছে এবং যা প্রতিনিয়ত আপডেট হতেই থাকবে ইনশাআল্লাহ।',
-    detailEn: 'Our editor is rich in all kinds of features. All kinds of flat and code editing including Python code can be downloaded directly in zip file and can also be downloaded in json file and coding can be edited in all kinds of formats and the code is facilitated in our storage so that your code is not lost. We are rich in all kinds of features here and which will be updated constantly, InshaAllah.',
-    tags: ['PWA', 'Audio Streaming'],
-    url: 'https://tvceditor.vercel.app',
-    status: 'live'
+    id: 'quranbangla', mark: 'QB', url: 'https://quranbangla.vercel.app', cats: ['islamic', 'edu', 'web'],
+    name: { bn: 'কুরআন বাংলা', en: 'Quran Bangla' },
+    cat: { bn: 'ইসলামিক / শিক্ষামূলক প্ল্যাটফর্ম', en: 'Islamic / Educational Platform' },
+    desc: { bn: 'কুরআনের রিসোর্স সহজলভ্য করার লক্ষ্যে তৈরি বাংলা কুরআন-কেন্দ্রিক একটি ডিজিটাল প্ল্যাটফর্ম।', en: 'A Bengali Quran-focused digital platform designed to make Quranic resources accessible.' }
   },
   {
-    id: 'rupsha-jf',
-    index: '05',
-    nameBn: 'রূপসা জনকল্যাণ ফাউন্ডেশন',
-    nameEn: 'Rupsha jonokollan foundation',
-    descBn: 'রূপসা ফাউন্ডেশনের অল্টারনেট, সংক্ষিপ্ত ডোমেইন — একই মিশন, দ্রুত শেয়ারের জন্য।',
-    descEn: "The foundation\u2019s alternate short-form domain \u2014 same mission, quicker to share.",
-    detailBn: 'দ্রুত শেয়ারযোগ্য একটি সংক্ষিপ্ত ডোমেইনে ফাউন্ডেশনের মূল কন্টেন্ট ও ডোনেশন ফিচার হোস্ট করা।',
-    detailEn: "Hosts the foundation\u2019s core content and donation features on a shorter, easy-to-share domain.",
-    tags: ['Vercel', 'Static + Firestore'],
-    url: 'https://rupshajf.vercel.app',
-    status: 'live'
+    id: 'tvcedit', mark: '{ }', url: 'https://tvcedit.vercel.app', cats: ['dev', 'web'],
+    name: { bn: 'Tech Verse Code Editor', en: 'Tech Verse Code Editor' },
+    cat: { bn: 'ডেভেলপার টুলস', en: 'Developer Tools' },
+    desc: { bn: 'একটি আধুনিক কোডিং ও ডেভেলপমেন্ট প্ল্যাটফর্ম।', en: 'A modern coding and development platform.' }
   },
   {
-    id: 'tvcourse',
-    index: '06',
-    nameBn: 'Tech Verse course',
-    nameEn: 'Tech Verse course',
-    descBn: 'আমাদের সকল স্পেশাল কোর্স এবং ফ্রি কোর্স সহ সকল ধরনের কোর্স সারভাইপ করে থাকে এবং যেখানে সকল কিছু রয়েছে।',
-    descEn: "We serve all types of courses, including all our special courses and free courses, and have everything you need.",
-    detailBn: 'আমাদের এই প্লাটফর্মে কোর্সের পাশাপাশি প্রত্যেকটা লেসনে স্পেশাল মডেল টেস্ট এবং যেখানে সকলেই এটেন্ড করতে পারবে এবং প্রত্যেক সপ্তাহে শুক্রবারে লাইভ পরীক্ষা রয়েছে যেখানে কোর্সের সকল শিক্ষার্থী অ্যাটেন্ড করতে পারবে সম্পূর্ণ ফ্রিতে এবং আমাদের এই সম্পূর্ণ প্ল্যাটফর্মটি একদম অফলাইনে চলবে।',
-    detailEn: 'In addition to the courses on this platform, there are special model tests in each lesson where everyone can attend and there is a live exam every Friday where all students of the course can attend completely free of charge and our entire platform runs completely offline.',
-    tags: ['Firebase', 'In Progress'],
-    url: 'https://tvcourse.vercel.app',
-    status: 'live'
+    id: 'tvsites', mark: 'TVS', url: 'https://tvsites.vercel.app', cats: ['web'],
+    name: { bn: 'Tech Verse Site', en: 'Tech Verse Site' },
+    cat: { bn: 'ওয়েব প্ল্যাটফর্ম', en: 'Web Platform' },
+    desc: { bn: 'টেক ভার্স ইকোসিস্টেমের অধীনে তৈরি একটি ডিজিটাল ওয়েব প্ল্যাটফর্ম।', en: 'A digital web platform developed under the Tech Verse ecosystem.' }
+  },
+  {
+    id: 'tvcourse', mark: 'TVC', url: 'https://tvcourse.vercel.app', cats: ['edu', 'web'],
+    name: { bn: 'Tech Verse Course', en: 'Tech Verse Course' },
+    cat: { bn: 'শিক্ষা / অনলাইন লার্নিং', en: 'Education / Online Learning' },
+    desc: { bn: 'অনলাইন লার্নিং ও কোর্সের জন্য একটি শিক্ষামূলক প্ল্যাটফর্ম।', en: 'An educational platform for online learning and courses.' }
+  },
+  {
+    id: 'tvexam', mark: 'TVE', url: 'https://tvexam.vercel.app', cats: ['edu', 'web'],
+    name: { bn: 'Tech Verse Exam', en: 'Tech Verse Exam' },
+    cat: { bn: 'শিক্ষা / পরীক্ষা', en: 'Education / Examination' },
+    desc: { bn: 'ডিজিটাল পরীক্ষা ও একাডেমিক মূল্যায়নের একটি প্ল্যাটফর্ম।', en: 'A digital examination and academic assessment platform.' }
+  },
+  {
+    id: 'buyzen', mark: 'BZ', url: 'https://buyzenshop.vercel.app', cats: ['shop', 'web'],
+    name: { bn: 'BuyZen Shop', en: 'BuyZen Shop' },
+    cat: { bn: 'ই-কমার্স', en: 'E-commerce' },
+    desc: { bn: 'একটি অনলাইন শপিং প্ল্যাটফর্ম।', en: 'An online shopping platform.' }
+  },
+  {
+    id: 'mazeflow', mark: 'MF', url: 'https://imran-s-project.github.io/MazeFlow/', cats: ['interactive'],
+    name: { bn: 'MazeFlow', en: 'MazeFlow' },
+    cat: { bn: 'ইন্টারঅ্যাক্টিভ / ওয়েব এক্সপেরিয়েন্স', en: 'Interactive / Web Experience' },
+    desc: { bn: 'একটি ইন্টারঅ্যাক্টিভ ওয়েব প্রজেক্ট।', en: 'An interactive web project.' }
+  },
+  {
+    id: 'tvqrcode', mark: 'QR', url: 'https://tvqrcode.vercel.app', cats: ['dev', 'web'],
+    name: { bn: 'Teach QR Code Generate', en: 'Teach QR Code Generate' },
+    cat: { bn: 'ডেভেলপার টুলস / ইউটিলিটি', en: 'Developer Tools / Utility' },
+    desc: { bn: 'একটি কিউআর কোড জেনারেশন টুল।', en: 'A QR code generation tool.' }
+  },
+  {
+    id: 'questiongen', mark: 'AQ', url: 'https://imran-s-project.github.io/QuestionGenerate/', cats: ['edu', 'web'],
+    name: { bn: 'Academic Question Generate', en: 'Academic Question Generate' },
+    cat: { bn: 'শিক্ষামূলক টুলস', en: 'Educational Tools' },
+    desc: { bn: 'একটি একাডেমিক প্রশ্ন তৈরির প্ল্যাটফর্ম।', en: 'An academic question generation platform.' }
   }
 ];
