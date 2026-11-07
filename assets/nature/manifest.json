@@ -1,6 +1,70 @@
 {
   "version": 1,
-  "generated": null,
-  "note": "No footage is bundled yet. Add clips to assets/nature/source/ and run: node tools/make-nature-assets.mjs  (see assets/nature/README.md). Until then every scene uses its built-in fallback look.",
-  "scenes": {}
+  "generated": "2026-11-07T10:03:48.409Z",
+  "scenes": {
+    "hero": {
+      "duration": 13.88,
+      "source": {
+        "width": 1280,
+        "height": 720,
+        "fps": 23.98
+      },
+      "tint": "#4c4d45",
+      "posters": {
+        "hd": "posters/hero-hd.webp"
+      },
+      "video": {
+        "hd": {
+          "webm": "videos/mountains/hero-hd.webm",
+          "mp4": "videos/mountains/hero-hd.mp4",
+          "width": 1280,
+          "height": 720,
+          "kb": {
+            "webm": 393,
+            "mp4": 1155
+          }
+        }
+      },
+      "encode": {
+        "loop": 1.5,
+        "max": 16,
+        "start": 0,
+        "focus": 0.5,
+        "tiers": "portrait,hd,fhd,qhd",
+        "quick": false
+      }
+    },
+    "valley": {
+      "duration": 14.5,
+      "source": {
+        "width": 1280,
+        "height": 720,
+        "fps": 23.98
+      },
+      "tint": "#5e6f59",
+      "posters": {
+        "hd": "posters/valley-hd.webp"
+      },
+      "video": {
+        "hd": {
+          "webm": "videos/mountains/valley-hd.webm",
+          "mp4": "videos/mountains/valley-hd.mp4",
+          "width": 1280,
+          "height": 720,
+          "kb": {
+            "webm": 2154,
+            "mp4": 3328
+          }
+        }
+      },
+      "encode": {
+        "loop": 1.5,
+        "max": 16,
+        "start": 0,
+        "focus": 0.5,
+        "tiers": "portrait,hd,fhd,qhd",
+        "quick": false
+      }
+    }
+  }
 }
