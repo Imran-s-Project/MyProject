@@ -15,10 +15,10 @@ export const SITE = {
   email: 'project.developer.tech@gmail.com',
   // Drop your actual PDF at this path (e.g. assets/imran-ahmed-cv.pdf) —
   // the button below is wired up but the file itself isn't included here.
-  resumeUrl: 'assets/imran_ahmed_cv.pdf',
+  resumeUrl: 'assets/imran-ahmed-cv.pdf',
   // Showcase/intro video shown in the "showcase" section, just below the
   // hero. Swap this URL any time — nothing else needs to change.
-  showcaseVideoUrl: "/ad.vd/imran's.mp4"
+  showcaseVideoUrl: "https://myprojectinfo.vercel.app/ad.vd/imran's.mp4"
 };
 
 export const CONTENT = {

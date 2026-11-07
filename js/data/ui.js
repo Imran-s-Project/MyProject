@@ -9,6 +9,8 @@ export const UI = {
   navLabel: { bn: 'প্রধান মেনু', en: 'Primary' },
   menu: { bn: 'মেনু খুলুন বা বন্ধ করুন', en: 'Toggle menu' },
   langLabel: { bn: 'ভাষা পরিবর্তন করুন', en: 'Switch language' },
+  motionPause: { bn: 'প্রকৃতির মোশন থামান', en: 'Pause nature motion' },
+  motionPlay: { bn: 'প্রকৃতির মোশন চালু করুন', en: 'Play nature motion' },
   filterLabel: { bn: 'প্রজেক্ট ফিল্টার', en: 'Filter projects' },
   filters: [
     ['all', 'সব প্রজেক্ট', 'All Projects'],

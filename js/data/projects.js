@@ -7,13 +7,13 @@ export const projects = [
   {
     id: 'rupsha', mark: 'RJF', url: 'https://rupsshajf.vercel.app', cats: ['web'],
     name: { bn: 'রূপসা জনকল্যাণ ফাউন্ডেশন', en: 'Rupsha Jonokollan Foundation' },
-    cat: { bn: ' অলাভজনক সংগঠন', en: 'Non profit Organization' },
+    cat: { bn: 'ফাউন্ডেশন / সংগঠন', en: 'Foundation / Organization' },
     desc: { bn: 'রূপসা জনকল্যাণ ফাউন্ডেশন ও এর সাংগঠনিক উদ্যোগগুলোর প্রতিনিধিত্বকারী একটি ডিজিটাল প্ল্যাটফর্ম।', en: 'A digital platform representing Rupsha Jonokollan Foundation and its organizational initiatives.' }
   },
   {
     id: 'quranbangla', mark: 'QB', url: 'https://quranbangla.vercel.app', cats: ['islamic', 'edu', 'web'],
     name: { bn: 'কুরআন বাংলা', en: 'Quran Bangla' },
-    cat: { bn: 'ইসলামিক', en: 'Islamic' },
+    cat: { bn: 'ইসলামিক / শিক্ষামূলক প্ল্যাটফর্ম', en: 'Islamic / Educational Platform' },
     desc: { bn: 'কুরআনের রিসোর্স সহজলভ্য করার লক্ষ্যে তৈরি বাংলা কুরআন-কেন্দ্রিক একটি ডিজিটাল প্ল্যাটফর্ম।', en: 'A Bengali Quran-focused digital platform designed to make Quranic resources accessible.' }
   },
   {
@@ -31,13 +31,13 @@ export const projects = [
   {
     id: 'tvcourse', mark: 'TVC', url: 'https://tvcourse.vercel.app', cats: ['edu', 'web'],
     name: { bn: 'Tech Verse Course', en: 'Tech Verse Course' },
-    cat: { bn: 'অনলাইন লার্নিং', en: 'Online Learning' },
+    cat: { bn: 'শিক্ষা / অনলাইন লার্নিং', en: 'Education / Online Learning' },
     desc: { bn: 'অনলাইন লার্নিং ও কোর্সের জন্য একটি শিক্ষামূলক প্ল্যাটফর্ম।', en: 'An educational platform for online learning and courses.' }
   },
   {
     id: 'tvexam', mark: 'TVE', url: 'https://tvexam.vercel.app', cats: ['edu', 'web'],
     name: { bn: 'Tech Verse Exam', en: 'Tech Verse Exam' },
-    cat: { bn: 'একাডেমিক পরীক্ষা', en: 'Academic Examination' },
+    cat: { bn: 'শিক্ষা / পরীক্ষা', en: 'Education / Examination' },
     desc: { bn: 'ডিজিটাল পরীক্ষা ও একাডেমিক মূল্যায়নের একটি প্ল্যাটফর্ম।', en: 'A digital examination and academic assessment platform.' }
   },
   {
@@ -49,13 +49,13 @@ export const projects = [
   {
     id: 'mazeflow', mark: 'MF', url: 'https://imran-s-project.github.io/MazeFlow/', cats: ['interactive'],
     name: { bn: 'MazeFlow', en: 'MazeFlow' },
-    cat: { bn: 'ইন্টারঅ্যাক্টিভ গেমিং', en: 'Interactive Gaming' },
+    cat: { bn: 'ইন্টারঅ্যাক্টিভ / ওয়েব এক্সপেরিয়েন্স', en: 'Interactive / Web Experience' },
     desc: { bn: 'একটি ইন্টারঅ্যাক্টিভ ওয়েব প্রজেক্ট।', en: 'An interactive web project.' }
   },
   {
     id: 'tvqrcode', mark: 'QR', url: 'https://tvqrcode.vercel.app', cats: ['dev', 'web'],
     name: { bn: 'Teach QR Code Generate', en: 'Teach QR Code Generate' },
-    cat: { bn: 'ডেভেলপার টুলস', en: 'Developer Tools' },
+    cat: { bn: 'ডেভেলপার টুলস / ইউটিলিটি', en: 'Developer Tools / Utility' },
     desc: { bn: 'একটি কিউআর কোড জেনারেশন টুল।', en: 'A QR code generation tool.' }
   },
   {
