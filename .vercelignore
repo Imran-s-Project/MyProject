@@ -1,0 +1,2 @@
+# Never upload the raw footage downloads when deploying with the Vercel CLI.
+assets/nature/source

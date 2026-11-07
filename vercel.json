@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/assets/nature/manifest.json",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/assets/nature/videos/:path*",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    },
+    {
+      "source": "/assets/nature/posters/:path*",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ]
+}

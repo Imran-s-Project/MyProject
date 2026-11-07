@@ -1,0 +1,8 @@
+# Raw footage downloads: keep them out of the repository and the public site.
+# Only the re-encoded files in assets/nature/videos and assets/nature/posters are meant to be served.
+# (see assets/nature/README.md)
+assets/nature/source/*
+!assets/nature/source/.gitkeep
+
+.DS_Store
+Thumbs.db
