@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-11-07T10:03:48.409Z",
+  "generated": "2026-11-07T10:33:42.387Z",
   "scenes": {
     "hero": {
       "duration": 13.88,
@@ -54,6 +54,134 @@
           "kb": {
             "webm": 2154,
             "mp4": 3328
+          }
+        }
+      },
+      "encode": {
+        "loop": 1.5,
+        "max": 16,
+        "start": 0,
+        "focus": 0.5,
+        "tiers": "portrait,hd,fhd,qhd",
+        "quick": false
+      }
+    },
+    "forest": {
+      "duration": 14.5,
+      "source": {
+        "width": 1280,
+        "height": 720,
+        "fps": 23.98
+      },
+      "tint": "#4f684d",
+      "posters": {
+        "hd": "posters/forest-hd.webp"
+      },
+      "video": {
+        "hd": {
+          "webm": "videos/forest/forest-hd.webm",
+          "mp4": "videos/forest/forest-hd.mp4",
+          "width": 1280,
+          "height": 720,
+          "kb": {
+            "webm": 1357,
+            "mp4": 2042
+          }
+        }
+      },
+      "encode": {
+        "loop": 1.5,
+        "max": 16,
+        "start": 0,
+        "focus": 0.5,
+        "tiers": "portrait,hd,fhd,qhd",
+        "quick": false
+      }
+    },
+    "river": {
+      "duration": 10.38,
+      "source": {
+        "width": 1280,
+        "height": 720,
+        "fps": 23.98
+      },
+      "tint": "#4c4947",
+      "posters": {
+        "hd": "posters/river-hd.webp"
+      },
+      "video": {
+        "hd": {
+          "webm": "videos/rivers/river-hd.webm",
+          "mp4": "videos/rivers/river-hd.mp4",
+          "width": 1280,
+          "height": 720,
+          "kb": {
+            "webm": 3629,
+            "mp4": 3617
+          }
+        }
+      },
+      "encode": {
+        "loop": 1.5,
+        "max": 16,
+        "start": 0,
+        "focus": 0.5,
+        "tiers": "portrait,hd,fhd,qhd",
+        "quick": false
+      }
+    },
+    "lake": {
+      "duration": 14.5,
+      "source": {
+        "width": 1280,
+        "height": 720,
+        "fps": 23.98
+      },
+      "tint": "#767879",
+      "posters": {
+        "hd": "posters/lake-hd.webp"
+      },
+      "video": {
+        "hd": {
+          "webm": "videos/sunset/lake-hd.webm",
+          "mp4": "videos/sunset/lake-hd.mp4",
+          "width": 1280,
+          "height": 720,
+          "kb": {
+            "webm": 426,
+            "mp4": 1174
+          }
+        }
+      },
+      "encode": {
+        "loop": 1.5,
+        "max": 16,
+        "start": 0,
+        "focus": 0.5,
+        "tiers": "portrait,hd,fhd,qhd",
+        "quick": false
+      }
+    },
+    "blue-hour": {
+      "duration": 14.5,
+      "source": {
+        "width": 1280,
+        "height": 720,
+        "fps": 23.98
+      },
+      "tint": "#5b6b74",
+      "posters": {
+        "hd": "posters/blue-hour-hd.webp"
+      },
+      "video": {
+        "hd": {
+          "webm": "videos/night/blue-hour-hd.webm",
+          "mp4": "videos/night/blue-hour-hd.mp4",
+          "width": 1280,
+          "height": 720,
+          "kb": {
+            "webm": 292,
+            "mp4": 1141
           }
         }
       },
