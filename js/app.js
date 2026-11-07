@@ -1,5 +1,6 @@
 import { el, bilingual as bi } from './core/dom.js';
 import { onLangChange, toggleLang, t } from './core/lang.js';
+import { motionEnabled, onMotionChange, toggleMotion } from './core/motionPref.js';
 import { CONTENT, SITE } from './data/content.js';
 import { socialLinks, ICONS } from './data/social.js';
 import { projects } from './data/projects.js';
@@ -10,10 +11,8 @@ const svg = (inner, vb = '0 0 24 24', extra = '') =>
 const ARROW = svg('<path d="M5 12h14M13 6l6 6-6 6"/>', '0 0 24 24', 'stroke-width="2"');
 const SEARCH = svg('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>', '0 0 24 24', 'stroke-width="2"');
 const STARMARK = svg('<rect x="7" y="7" width="18" height="18"/><rect x="7" y="7" width="18" height="18" transform="rotate(45 16 16)"/><circle cx="16" cy="16" r="2.6" fill="currentColor"/>', '0 0 32 32', 'stroke-width="1.6"');
-const ROSETTE = ['', 'rotate(45 100 100)', 'rotate(22.5 100 100)', 'rotate(67.5 100 100)']
-  .map((r) => `<rect x="45" y="45" width="110" height="110"${r ? ` transform="${r}"` : ''}/>`)
-  .join('');
-const ORNAMENT = svg(`${ROSETTE}<circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="30"/>`, '0 0 200 200', 'stroke-width=".6"');
+const PAUSE = svg('<path d="M9 5v14M15 5v14"/>', '0 0 24 24', 'stroke-width="2.2"');
+const PLAY = svg('<path d="M8 5.5v13l11-6.5z"/>', '0 0 24 24', 'stroke-width="2"');
 const PALETTE = [['#0f5a43', '#2bb585'], ['#17483a', '#b8924a'], ['#124b52', '#2c8f7e'], ['#3a5a2a', '#d4b06a'], ['#0d3b34', '#5aa88a']];
 
 const ico = (markup) => {
@@ -47,6 +46,22 @@ const split = (node) => {
 };
 
 /* ---------- header ---------- */
+/** Pause / play the living background (WCAG 2.2.2) — also the escape hatch for low-power visitors. */
+function motionButton() {
+  const b = el('button', { class: 'mt', type: 'button', on: { click: toggleMotion } });
+  const sync = () => {
+    const on = motionEnabled();
+    b.replaceChildren(ico(on ? PAUSE : PLAY));
+    const label = t(on ? UI.motionPause : UI.motionPlay);
+    b.setAttribute('aria-label', label);
+    b.title = label;
+  };
+  sync();
+  onMotionChange(sync);
+  onLangChange(sync);
+  return b;
+}
+
 function header() {
   const bar = el('header', { class: 'hdr' });
   const setOpen = (open) => {
@@ -67,7 +82,7 @@ function header() {
   bar.append(
     el('a', { class: 'brand', href: '#top' }, [ico(STARMARK), el('span', { class: 'bt' }, bi(UI.brand))]),
     bind(el('nav', { class: 'nav-links', id: 'nav-links' }, [...links, el('span', { class: 'nav-ind', 'aria-hidden': 'true' })]), 'aria-label', UI.navLabel),
-    el('div', { class: 'acts' }, [lang, burger])
+    el('div', { class: 'acts' }, [motionButton(), lang, burger])
   );
   return bar;
 }
@@ -76,8 +91,8 @@ function header() {
 function hero() {
   const h1 = el('h1', {}, bi(CONTENT.hero.name));
   h1.querySelectorAll('span').forEach(split);
-  return el('section', { class: 'hero', id: 'top' }, [
-    el('div', { class: 'orn', 'aria-hidden': 'true', html: ORNAMENT }),
+  const soc = socialLinks.map((s) => link(s.url, { 'aria-label': s.name, title: s.name, html: ICONS[s.icon] }));
+  return el('section', { class: 'hero', id: 'top', data: { scene: 'hero' } }, [
     el('div', { class: 'wrap' }, [
       el('p', { class: 'eyebrow' }, bi(CONTENT.hero.eyebrow)),
       h1,
@@ -85,7 +100,8 @@ function hero() {
       el('div', { class: 'cta' }, [
         el('a', { class: 'btn btn-p', href: '#projects' }, [...bi(CONTENT.hero.ctaPrimary), ico(ARROW)]),
         el('a', { class: 'btn btn-g', href: '#contact' }, bi(CONTENT.hero.ctaGhost))
-      ])
+      ]),
+      bind(el('div', { class: 'soc hero-soc', role: 'group' }, soc), 'aria-label', UI.follow)
     ]),
     el('a', { class: 'hint', href: '#projects' }, [el('i'), ...bi(CONTENT.hero.scrollHint)])
   ]);
@@ -169,7 +185,7 @@ function projectsSection() {
     empty.hidden = shown > 0;
     chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.k === filter)));
   };
-  return el('section', { id: 'projects' }, el('div', { class: 'wrap' }, [
+  return el('section', { id: 'projects', data: { scene: 'valley' } }, el('div', { class: 'wrap' }, [
     eyebrowHead(S.eyebrow, S.heading, S.intro),
     el('div', { class: 'tools reveal' }, [
       bind(el('div', { class: 'chips', role: 'group' }, chips), 'aria-label', UI.filterLabel),
@@ -195,10 +211,13 @@ function aboutSection() {
     ])
   );
   return el('section', { id: 'about' }, el('div', { class: 'wrap' }, [
-    eyebrowHead(A.eyebrow, A.heading),
-    el('div', { class: 'about' }, [
-      el('div', { class: 'panel reveal' }, A.paragraphs.map((p) => el('p', {}, bi(p)))),
-      el('div', { class: 'panel reveal' }, [el('p', { class: 'cat' }, bi(A.skillsLabel)), ...groups])
+    // Two blocks, two scenes: the story plays over the sunlit woodland, the skills over the river.
+    el('div', { class: 'scene-block', data: { scene: 'forest' } }, [
+      eyebrowHead(A.eyebrow, A.heading),
+      el('div', { class: 'panel about-text reveal' }, A.paragraphs.map((p) => el('p', {}, bi(p))))
+    ]),
+    el('div', { class: 'scene-block', data: { scene: 'river' } }, [
+      el('div', { class: 'panel skills-panel reveal' }, [el('p', { class: 'cat' }, bi(A.skillsLabel)), el('div', { class: 'skills' }, groups)])
     ])
   ]));
 }
@@ -211,7 +230,7 @@ function contactSection() {
     a.style.setProperty('--i', i % 4);
     return a;
   });
-  return el('section', { id: 'contact' }, el('div', { class: 'wrap' }, [
+  return el('section', { id: 'contact', data: { scene: 'lake' } }, el('div', { class: 'wrap' }, [
     eyebrowHead(C.eyebrow, C.heading),
     el('div', { class: 'panel cprimary reveal' }, [
       el('div', {}, [el('h3', { text: SITE.email }), el('p', {}, bi(C.primaryBlurb))]),
@@ -227,7 +246,7 @@ function contactSection() {
 /* ---------- footer ---------- */
 function footer() {
   const soc = socialLinks.map((s) => link(s.url, { 'aria-label': s.name, title: s.name, html: ICONS[s.icon] }));
-  return el('footer', {}, el('div', { class: 'wrap' }, [
+  return el('footer', { data: { scene: 'blue-hour' } }, el('div', { class: 'wrap' }, [
     el('div', { class: 'fgrid' }, [
       el('div', {}, [el('a', { class: 'brand', href: '#top' }, [ico(STARMARK), el('span', {}, bi(UI.brand))]), el('p', {}, bi(UI.footerDesc))]),
       el('div', {}, [el('h4', {}, bi(UI.explore)), el('div', { class: 'flinks' }, UI.nav.map((n) => el('a', { href: n.href }, bi(n))))]),
