@@ -17,10 +17,24 @@ export function initMotion() {
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach((n) => io.observe(n));
 
-  // Header turns solid after the first scroll.
+  // Header turns solid after the first scroll; the thin progress bar tracks how far down the page we are.
   const head = document.querySelector('.hdr');
-  const onScroll = () => head.classList.toggle('solid', scrollY > 40);
+  const bar = document.querySelector('.progress');
+  let queued = false;
+  const paintProgress = () => {
+    queued = false;
+    const max = root.scrollHeight - innerHeight;
+    bar?.style.setProperty('--p', (max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0).toFixed(4));
+  };
+  const onScroll = () => {
+    head.classList.toggle('solid', scrollY > 40);
+    if (!queued) {
+      queued = true;
+      requestAnimationFrame(paintProgress);
+    }
+  };
   addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
   onScroll();
 
   // Active section tracking + sliding indicator.
