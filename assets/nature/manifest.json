@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "generated": null,
+  "note": "No footage is bundled yet. Add clips to assets/nature/source/ and run: node tools/make-nature-assets.mjs  (see assets/nature/README.md). Until then every scene uses its built-in fallback look.",
+  "scenes": {}
+}
