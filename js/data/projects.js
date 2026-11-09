@@ -5,7 +5,7 @@
  */
 export const projects = [
   {
-    id: 'rupsha', mark: 'RJF', url: 'https://rupsshajf.vercel.app', cats: ['web'],
+    id: 'rupsha', mark: 'RJF', url: 'https://rupshajf.vercel.app', cats: ['web'],
     name: { bn: 'রূপসা জনকল্যাণ ফাউন্ডেশন', en: 'Rupsha Jonokollan Foundation' },
     cat: { bn: 'ফাউন্ডেশন / সংগঠন', en: 'Foundation / Organization' },
     desc: { bn: 'রূপসা জনকল্যাণ ফাউন্ডেশন ও এর সাংগঠনিক উদ্যোগগুলোর প্রতিনিধিত্বকারী একটি ডিজিটাল প্ল্যাটফর্ম।', en: 'A digital platform representing Rupsha Jonokollan Foundation and its organizational initiatives.' }
