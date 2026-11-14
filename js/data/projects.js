@@ -59,8 +59,8 @@ export const projects = [
     desc: { bn: 'একটি কিউআর কোড জেনারেশন টুল।', en: 'A QR code generation tool.' }
   },
   {
-    id: 'questiongen', mark: 'AQ', url: 'https://imran-s-project.github.io/QuestionGenerate/', cats: ['edu', 'web'],
-    name: { bn: 'Academic Question Generate', en: 'Academic Question Generate' },
+    id: 'questiongen', mark: 'AQ', url: 'https://exammasters.vercel.app/', cats: ['edu', 'web'],
+    name: { bn: ' এক্সাম পেপার মাস্টার', en: 'Exam Paper Master' },
     cat: { bn: 'শিক্ষামূলক টুলস', en: 'Educational Tools' },
     desc: { bn: 'একটি একাডেমিক প্রশ্ন তৈরির প্ল্যাটফর্ম।', en: 'An academic question generation platform.' }
   }
