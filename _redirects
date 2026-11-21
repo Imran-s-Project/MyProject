@@ -1,0 +1,16 @@
+# Netlify / Cloudflare-style permanent redirects. Existing files (index.html, 404.html) are served as-is,
+# so the root keeps showing the migration page, which then redirects in the browser.
+/projects/*   https://imranprojects.vercel.app/en/projects   301
+/projects     https://imranprojects.vercel.app/en/projects   301
+/blog/*       https://imranprojects.vercel.app/en/blog       301
+/blog         https://imranprojects.vercel.app/en/blog       301
+/about/*      https://imranprojects.vercel.app/en/about      301
+/about        https://imranprojects.vercel.app/en/about      301
+/privacy/*    https://imranprojects.vercel.app/en/privacy    301
+/privacy      https://imranprojects.vercel.app/en/privacy    301
+/contact/*    https://imranprojects.vercel.app/en#contact    301
+/contact      https://imranprojects.vercel.app/en#contact    301
+/cv           https://imranprojects.vercel.app/assets/imran_ahmedcv.pdf   301
+/resume       https://imranprojects.vercel.app/assets/imran_ahmedcv.pdf   301
+/sitemap.xml  https://imranprojects.vercel.app/sitemap.xml   301
+/*            https://imranprojects.vercel.app/en            301

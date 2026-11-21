@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Moved | Imran — Redirecting to New Digital Home</title>
+  <meta name="description" content="My portfolio has officially moved to a new digital home. Redirecting you to https://imranprojects.vercel.app/en" />
+  
+  <!-- SEO Canonical & Permanent Migration Signals -->
+  <link rel="canonical" href="https://imranprojects.vercel.app/en" />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- HTML Meta Refresh Fallback (3 Seconds) for Non-JS Environments -->
+  <meta http-equiv="refresh" content="3; url=https://imranprojects.vercel.app/en" />
+
+  <!-- Inline SVG Favicon matching the IA Geometric Star Brand Logo -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23090a0c'/%3E%3Cg transform='translate(50,50)'%3E%3Crect x='-24' y='-24' width='48' height='48' rx='4' fill='none' stroke='%2322d3ee' stroke-width='4.5'/%3E%3Crect x='-24' y='-24' width='48' height='48' rx='4' fill='none' stroke='%2322d3ee' stroke-width='4.5' transform='rotate(45)'/%3E%3Ctext x='0' y='11' font-family='system-ui,sans-serif' font-weight='800' font-size='28' fill='%23f1f5f9' text-anchor='middle'%3EIA%3C/text%3E%3C/g%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#090a0c',
+            surface: '#111318',
+            cyanBrand: '#22d3ee',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+            'spin-slow': 'spin 24s linear infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(18px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.35', transform: 'scale(1)' },
+              '50%': { opacity: '0.6', transform: 'scale(1.06)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Immediate Intelligent Redirect Setup (Runs before body paint to calculate smart target URL) -->
+  <script>
+    (function () {
+      var BASE_TARGET = 'https://imranprojects.vercel.app/en';
+      var REDIRECT_DELAY_MS = 2800; // 2.8 seconds: crisp 2–3s window
+
+      /**
+       * Computes the intelligent destination URL while preserving relevant sub-paths,
+       * query parameters, or hash fragments and preventing any self-redirect loops.
+       */
+      function computeSmartDestination() {
+        try {
+          var currentUrl = new URL(window.location.href);
+          var targetUrl = new URL(BASE_TARGET);
+
+          // Prevent redirect loops if already on the target host and path
+          if (
+            currentUrl.hostname === targetUrl.hostname &&
+            currentUrl.pathname.indexOf('/en') === 0
+          ) {
+            return null;
+          }
+
+          // Clean current pathname (strip index.html and trailing slashes)
+          var rawPath = currentUrl.pathname
+            .replace(/\/index\.html$/i, '')
+            .replace(/\/+$/, '');
+
+          // Strip redundant /en prefix if old site used it
+          if (rawPath === '/en') {
+            rawPath = '';
+          } else if (rawPath.indexOf('/en/') === 0) {
+            rawPath = rawPath.slice(3);
+          }
+
+          // Append preserved sub-route (e.g., /projects, /about) if present
+          var finalPath = targetUrl.pathname.replace(/\/+$/, '');
+          if (rawPath && rawPath !== '/') {
+            finalPath += rawPath.charAt(0) === '/' ? rawPath : '/' + rawPath;
+          }
+
+          targetUrl.pathname = finalPath;
+
+          // Preserve query parameters & hash anchors
+          if (currentUrl.search) {
+            targetUrl.search = currentUrl.search;
+          }
+          if (currentUrl.hash) {
+            targetUrl.hash = currentUrl.hash;
+          }
+
+          return targetUrl.toString();
+        } catch (err) {
+          return BASE_TARGET;
+        }
+      }
+
+      window.__MIGRATION_CONFIG__ = {
+        baseTarget: BASE_TARGET,
+        destinationUrl: computeSmartDestination() || BASE_TARGET,
+        delayMs: REDIRECT_DELAY_MS,
+        isLoopProtected: computeSmartDestination() === null,
+      };
+    })();
+  </script>
+</head>
+
+<body class="bg-obsidian text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-400/20 selection:text-cyan-300 overflow-x-hidden relative">
+
+  <!-- Ambient Background Radial Glow & Subtle Grid -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden="true">
+    <!-- Top Cyan Glow matching Brand Accent -->
+    <div class="absolute -top-36 left-1/2 -translate-x-1/2 w-[540px] sm:w-[760px] h-[420px] rounded-full bg-cyan-500/15 blur-[130px] animate-pulse-glow"></div>
+    <!-- Bottom Subtle Indigo/Slate Depth -->
+    <div class="absolute -bottom-40 right-1/4 w-[460px] h-[360px] rounded-full bg-sky-600/10 blur-[140px]"></div>
+    <!-- Subtle Architectural Dot Pattern -->
+    <div class="absolute inset-0 opacity-[0.14]" style="background-image: radial-gradient(#38bdf8 0.75px, transparent 0.75px); background-size: 28px 28px;"></div>
+  </div>
+
+  <!-- Top Minimal Status Header -->
+  <header class="w-full max-w-5xl mx-auto px-5 sm:px-8 pt-6 sm:pt-8 flex items-center justify-between animate-fade-up">
+    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+      </span>
+      <span class="text-xs font-medium tracking-wide text-slate-300">301 Permanent Migration</span>
+    </div>
+
+    <span class="hidden sm:inline-block font-mono text-xs text-slate-500">
+      imranprojects.vercel.app
+    </span>
+  </header>
+
+  <!-- Main Migration Card Container -->
+  <main class="w-full max-w-2xl mx-auto px-4 sm:px-6 my-auto py-8 sm:py-12">
+    <section
+      aria-labelledby="migration-heading"
+      class="relative rounded-3xl bg-surface/85 border border-white/[0.09] shadow-[0_24px_80px_-16px_rgba(0,0,0,0.85)] backdrop-blur-xl p-7 sm:p-11 md:p-12 text-center animate-fade-up"
+    >
+      <!-- Subtle Top Highlight Border Line -->
+      <div class="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" aria-hidden="true"></div>
+
+      <!-- Custom Geometric Octagram "IA" Brand Emblem (Recreated from Brand Logo) -->
+      <div class="mx-auto mb-7 sm:mb-8 relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+        <!-- Soft Cyan Backdrop Aura -->
+        <div class="absolute inset-2 rounded-2xl bg-cyan-400/15 blur-xl" aria-hidden="true"></div>
+
+        <!-- Logo Container -->
+        <div class="relative w-full h-full rounded-2xl bg-[#090a0c] border border-cyan-400/25 shadow-inner flex items-center justify-center p-3">
+          <svg
+            viewBox="0 0 120 120"
+            class="w-full h-full overflow-visible"
+            role="img"
+            aria-label="IA Personal Brand Monogram Logo"
+          >
+            <!-- Outer Eight-Point Geometric Star (Two Intersecting Squares) -->
+            <g stroke="#22d3ee" stroke-width="4.5" stroke-linejoin="round" fill="none">
+              <!-- Axis-aligned Square -->
+              <rect x="24" y="24" width="72" height="72" rx="3" />
+              <!-- 45-degree Rotated Square -->
+              <rect x="24" y="24" width="72" height="72" rx="3" transform="rotate(45 60 60)" />
+            </g>
+
+            <!-- Crisp White Rounded Monogram "IA" -->
+            <g fill="#f1f5f9">
+              <!-- Letter I -->
+              <rect x="41.5" y="42" width="6.5" height="36" rx="3.25" />
+              <!-- Letter A -->
+              <path d="M65.8 42c1.6 0 2.9 1 3.5 2.5l10.2 29.1c.6 1.7-.3 3.6-2 4.2-1.7.6-3.6-.3-4.2-2l-1.9-5.6H60.2l-1.9 5.6c-.6 1.7-2.5 2.6-4.2 2-1.7-.6-2.6-2.5-2-4.2l10.2-29.1c.6-1.5 1.9-2.5 3.5-2.5zm0 10.6L62.1 64h7.4l-3.7-11.4z" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Main Heading -->
+      <h1
+        id="migration-heading"
+        class="text-3xl sm:text-4xl md:text-[2.65rem] font-extrabold tracking-tight text-white leading-[1.15] mb-4"
+      >
+        My Portfolio Has Moved!
+      </h1>
+
+      <!-- Supporting Message -->
+      <p class="text-slate-300/90 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8 sm:mb-9 font-normal">
+        Welcome to my new digital home! I've upgraded my portfolio with a fresh experience, updated projects, and more exciting work. Explore my latest portfolio through the link below.
+      </p>
+
+      <!-- Primary Direct Anchor CTA Button -->
+      <div class="flex flex-col items-center justify-center gap-4 mb-8 sm:mb-9">
+        <a
+          id="primary-cta"
+          href="https://imranprojects.vercel.app/en"
+          class="group relative inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-sky-400 text-slate-950 font-bold text-base sm:text-lg tracking-tight shadow-[0_10px_30px_-6px_rgba(34,211,238,0.45)] hover:shadow-[0_16px_38px_-4px_rgba(34,211,238,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-surface"
+        >
+          <span>Explore My New Portfolio</span>
+          <span
+            aria-hidden="true"
+            class="inline-block transition-transform duration-200 group-hover:translate-x-1.5 font-semibold"
+          >
+            &rarr;
+          </span>
+        </a>
+
+        <!-- Destination URL Pill Preview -->
+        <div class="inline-flex items-center gap-2 max-w-full px-3.5 py-1.5 rounded-xl bg-obsidian/80 border border-white/[0.07] text-xs font-mono text-slate-400">
+          <svg class="w-3.5 h-3.5 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          <span id="destination-display" class="truncate">https://imranprojects.vercel.app/en</span>
+        </div>
+      </div>
+
+      <!-- Automatic Redirection Status & Smooth Animated Progress Bar -->
+      <div class="max-w-md mx-auto pt-6 border-t border-white/[0.07]">
+        <div class="flex items-center justify-between text-xs sm:text-sm text-slate-400 mb-2.5">
+          <span id="redirect-status-text" class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-400 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+              <path class="opacity-85" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+            </svg>
+            <span>Redirecting you automatically in a few seconds...</span>
+          </span>
+          <span id="countdown-badge" class="font-mono text-xs text-cyan-400 font-medium tabular-nums">
+            3.0s
+          </span>
+        </div>
+
+        <!-- Smooth Progress Track -->
+        <div class="w-full h-1.5 rounded-full bg-white/[0.07] overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-container">
+          <div
+            id="progress-bar"
+            class="h-full w-0 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.75)] transition-[width] duration-75 ease-linear"
+          ></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Accessible Footer -->
+  <footer class="w-full max-w-5xl mx-auto px-5 sm:px-8 pb-6 sm:pb-8 text-center">
+    <p class="text-xs text-slate-500">
+      If you are not redirected automatically, please click the button above to visit
+      <a href="https://imranprojects.vercel.app/en" id="footer-link" class="text-slate-300 hover:text-cyan-400 underline underline-offset-4 transition-colors">
+        imranprojects.vercel.app/en
+      </a>
+    </p>
+  </footer>
+
+  <!-- Intelligent Redirection Engine -->
+  <script>
+    (function () {
+      var config = window.__MIGRATION_CONFIG__ || {
+        baseTarget: 'https://imranprojects.vercel.app/en',
+        destinationUrl: 'https://imranprojects.vercel.app/en',
+        delayMs: 2800,
+        isLoopProtected: false,
+      };
+
+      var ctaEl = document.getElementById('primary-cta');
+      var footerLinkEl = document.getElementById('footer-link');
+      var destDisplayEl = document.getElementById('destination-display');
+      var progressBarEl = document.getElementById('progress-bar');
+      var progressContainerEl = document.getElementById('progress-container');
+      var countdownEl = document.getElementById('countdown-badge');
+      var statusTextEl = document.getElementById('redirect-status-text');
+
+      // Update anchor hrefs and visual URL pill if a sub-route was intelligently preserved
+      if (ctaEl) ctaEl.setAttribute('href', config.destinationUrl);
+      if (footerLinkEl) footerLinkEl.setAttribute('href', config.destinationUrl);
+      if (destDisplayEl) destDisplayEl.textContent = config.destinationUrl;
+
+      // Guard against redirect loops
+      if (config.isLoopProtected) {
+        if (statusTextEl) {
+          statusTextEl.innerHTML = '<span>You are already viewing the destination domain.</span>';
+        }
+        if (countdownEl) countdownEl.textContent = 'Ready';
+        if (progressBarEl) progressBarEl.style.width = '100%';
+        return;
+      }
+
+      var hasNavigated = false;
+      var startTime = performance.now();
+
+      /**
+       * Executes immediate navigation in the same browser tab using window.location.replace()
+       * so visitors do not get trapped hitting the Back button into an endless redirect loop.
+       */
+      function executeRedirect() {
+        if (hasNavigated) return;
+        hasNavigated = true;
+        try {
+          window.location.replace(config.destinationUrl);
+        } catch (e) {
+          window.location.href = config.destinationUrl;
+        }
+      }
+
+      // Smooth 60fps progress bar & countdown animation
+      function updateProgress(now) {
+        if (hasNavigated) return;
+
+        var elapsed = now - startTime;
+        var ratio = Math.min(elapsed / config.delayMs, 1);
+        var percentage = Math.round(ratio * 100);
+        var remainingSeconds = Math.max((config.delayMs - elapsed) / 1000, 0).toFixed(1);
+
+        if (progressBarEl) {
+          progressBarEl.style.width = percentage + '%';
+        }
+        if (progressContainerEl) {
+          progressContainerEl.setAttribute('aria-valuenow', String(percentage));
+        }
+        if (countdownEl) {
+          countdownEl.textContent = remainingSeconds + 's';
+        }
+
+        if (ratio < 1) {
+          requestAnimationFrame(updateProgress);
+        } else {
+          executeRedirect();
+        }
+      }
+
+      // Primary timer fallback in case background tab throttles requestAnimationFrame
+      var fallbackTimer = setTimeout(executeRedirect, config.delayMs);
+
+      // Cancel timer cleanly if user manually clicks the CTA anchor
+      if (ctaEl) {
+        ctaEl.addEventListener('click', function () {
+          hasNavigated = true;
+          clearTimeout(fallbackTimer);
+        });
+      }
+
+      requestAnimationFrame(updateProgress);
+    })();
+  </script>
+</body>
+</html>
