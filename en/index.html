@@ -1,1 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Portfolio Has Moved — Imran Ahmed</title>
+<meta name="description" content="My portfolio now lives at imranprojects.vercel.app. You are being redirected to the new site.">
+<meta name="theme-color" content="#07090b">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://imranprojects.vercel.app/en">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%2307090b'/%3E%3Cg fill='none' stroke='%2322d3ee' stroke-width='22' stroke-linejoin='round'%3E%3Cpath d='M147 147H365V365H147Z'/%3E%3Cpath d='M256 97L415 256L256 415L97 256Z'/%3E%3C/g%3E%3Cpath d='M197 200V312M234 312L277 200L320 312M247 283H307' fill='none' stroke='%23e9eef1' stroke-width='30' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<!-- No-JS fallback only. Inside <noscript> it can never race the JavaScript redirect. -->
+<noscript><meta http-equiv="refresh" content="3;url=https://imrantech.cyou/en"></noscript>
+<style>
+:root{--ink:#07090b;--mark:#22d3ee;--text:#e9eef1;--muted:#93a3ac}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100dvh;display:grid;place-items:center;background:var(--ink);color:var(--text);font:400 1rem/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;padding:max(1.5rem,env(safe-area-inset-top)) max(1.25rem,env(safe-area-inset-right)) max(1.5rem,env(safe-area-inset-bottom)) max(1.25rem,env(safe-area-inset-left))}
+main{width:100%;max-width:34rem;text-align:center;animation:in .8s cubic-bezier(.2,.7,.2,1) both}
+.mark{display:block;width:clamp(7.5rem,34vw,10.5rem);height:auto;margin:0 auto 2.25rem}
+.mark path{fill:none;stroke-width:13;stroke-linejoin:round;stroke-linecap:round}
+.mark .base{stroke:var(--mark);opacity:.16}
+.mark .trace{stroke:var(--mark);stroke-dasharray:1 2;stroke-dashoffset:1;animation:draw 3s linear forwards}
+.mark .ia{stroke:var(--text);stroke-width:20}
+.paused .trace{animation-play-state:paused}
+h1{margin:0 0 1rem;font-size:clamp(2.1rem,7.5vw,3.25rem);line-height:1.08;letter-spacing:-.035em;font-weight:700;text-wrap:balance}
+p{margin:0 auto;max-width:30rem;color:var(--muted);text-wrap:pretty}
+.cta{display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;padding:.95rem 1.6rem;border-radius:999px;background:var(--mark);color:#031519;font-weight:650;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.cta span{display:inline-block;transition:transform .2s ease}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px -10px rgb(34 211 238/.6)}
+.cta:hover span{transform:translateX(4px)}
+.cta:focus-visible,.pause:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+.status{margin-top:1.75rem;font-size:.9rem}
+.pause{margin-top:.15rem;padding:.65rem 1rem;border:0;border-radius:.5rem;background:none;color:var(--muted);font:inherit;font-size:.85rem;text-decoration:underline;text-underline-offset:.25em;cursor:pointer}
+.pause:hover{color:var(--text)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+@media (prefers-reduced-motion:reduce){main{animation:none}.cta,.cta span{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <svg class="mark" viewBox="80 80 352 352" aria-hidden="true" focusable="false">
+    <path class="base" d="M147 147H365V365H147Z"/>
+    <path class="base" d="M256 97L415 256L256 415L97 256Z"/>
+    <path class="trace" pathLength="1" d="M147 147H365V365H147Z"/>
+    <path class="trace" pathLength="1" d="M256 97L415 256L256 415L97 256Z"/>
+    <path class="ia" d="M197 200V312M234 312L277 200L320 312M247 283H307"/>
+  </svg>
+  <h1>My Portfolio Has Moved!</h1>
+  <p>Welcome to my new digital home! I’ve upgraded my portfolio with a fresh experience, updated projects, and more exciting work. Explore my latest portfolio through the link below.</p>
+  <a class="cta" id="cta" href="https://imranprojects.vercel.app/en">Explore My New Portfolio <span aria-hidden="true">→</span></a>
+  <p class="status" id="status" role="status">Redirecting you automatically in a few seconds...</p>
+  <button class="pause" id="pause" type="button">Pause redirect</button>
+</main>
+<script>
+(function () {
+  var ORIGIN = "https://imranprojects.vercel.app", BASE = ORIGIN + "/en", DELAY = 3000;
+  if (location.hostname === "imrantech.cyou") return; // never loop on the new host
 
+  // Map old routes to real routes on the new site; anything unknown lands on the home page.
+  var p = location.pathname.toLowerCase().replace(/\/+$/, ""), to;
+  if (/^\/(cv|resume)(\.pdf)?$/.test(p)) to = ORIGIN + "/assets/imran_ahmedcv.pdf";
+  else if (/^\/contact(\/|$)/.test(p)) to = BASE + "#contact";
+  else to = BASE
+    + (/^\/(projects?|work|portfolio)(\/|$)/.test(p) ? "/projects"
+     : /^\/(blog|articles?|posts?)(\/|$)/.test(p) ? "/blog"
+     : /^\/about(\/|$)/.test(p) ? "/about"
+     : /^\/privacy(\/|$)/.test(p) ? "/privacy" : "")
+    + location.search + location.hash;
+
+  var cta = document.getElementById("cta"), btn = document.getElementById("pause"),
+      msg = document.getElementById("status"), root = document.documentElement,
+      text = msg.textContent, left = DELAY, started = 0, timer = 0, paused = false;
+
+  cta.href = to;
+  function go() { window.location.replace(to); }
+  function run() { started = Date.now(); timer = setTimeout(go, left); }
+
+  btn.addEventListener("click", function () {
+    paused = !paused;
+    if (paused) { clearTimeout(timer); left = Math.max(left - (Date.now() - started), 800); }
+    else run();
+    root.classList.toggle("paused", paused);
+    btn.textContent = paused ? "Resume redirect" : "Pause redirect";
+    msg.textContent = paused ? "Redirect paused. Open the new portfolio whenever you are ready." : text;
+  });
+
+  run();
+})();
+</script>
+</body>
+</html>
