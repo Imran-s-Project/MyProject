@@ -1,16 +1,16 @@
 # Netlify / Cloudflare-style permanent redirects. Existing files (index.html, 404.html) are served as-is,
 # so the root keeps showing the migration page, which then redirects in the browser.
-/projects/*   https://imrantech.cyou/en/projects   301
-/projects     https://imrantech.cyou/en/projects   301
-/blog/*       https://imrantech.cyou/en/blog       301
-/blog         https://imrantech.cyou/en/blog       301
-/about/*      https://imrantech.cyou/en/about      301
-/about        https://imrantech.cyou/en/about      301
-/privacy/*    https://imrantech.cyou/en/privacy    301
-/privacy      https://imrantech.cyou/en/privacy    301
-/contact/*    https://imrantech.cyou/en#contact    301
-/contact      https://imrantech.cyou/en#contact    301
-/cv           https://imrantech.cyou/imran_ahmedcv.pdf   301
-/resume       https://imrantech.cyou/assets/imran_ahmedcv.pdf   301
-/sitemap.xml  https://imrantech.cyou/sitemap.xml   301
-/*            https://imrantech.cyou/en            301
+/projects/*   https://www.imrantech.cyou/en/projects   301
+/projects     https://www.imrantech.cyou/en/projects   301
+/blog/*       https://www.imrantech.cyou/en/blog       301
+/blog         https://www.imrantech.cyou/en/blog       301
+/about/*      https://www.imrantech.cyou/en/about      301
+/about        https://www.imrantech.cyou/en/about      301
+/privacy/*    https://www imrantech.cyou/en/privacy    301
+/privacy      https://www.imrantech.cyou/en/privacy    301
+/contact/*    https://www.imrantech.cyou/en#contact    301
+/contact      https://www.imrantech.cyou/en#contact    301
+/cv           https://www.imrantech.cyou/imran_ahmedcv.pdf   301
+/resume       https://www imrantech.cyou/assets/imran_ahmedcv.pdf   301
+/sitemap.xml  https://www.imrantech.cyou/sitemap.xml   301
+/*            https://www.imrantech.cyou/en            301
