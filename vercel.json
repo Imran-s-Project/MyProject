@@ -2,14 +2,14 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     { "source": "/index.html", "destination": "/", "statusCode": 301 },
-    { "source": "/projects/:path*", "destination": "https://imrantech.cyou/en/projects", "statusCode": 301 },
-    { "source": "/blog/:path*", "destination": "https://imrantech.cyou/en/blog", "statusCode": 301 },
-    { "source": "/about/:path*", "destination": "https://imrantech.cyou/en/about", "statusCode": 301 },
-    { "source": "/privacy/:path*", "destination": "https://imrantech.cyou/en/privacy", "statusCode": 301 },
-    { "source": "/contact/:path*", "destination": "https://imrantech.cyou/en#contact", "statusCode": 301 },
-    { "source": "/cv", "destination": "https://imrantech.cyou/assets/imran_ahmedcv.pdf", "statusCode": 301 },
-    { "source": "/resume", "destination": "https://imrantech.cyou/assets/imran_ahmedcv.pdf", "statusCode": 301 },
-    { "source": "/sitemap.xml", "destination": "https://imrantech.cyou/sitemap.xml", "statusCode": 301 },
-    { "source": "/:path+", "destination": "https://imrantech.cyou/en", "statusCode": 301 }
+    { "source": "/projects/:path*", "destination": "https://www.imrantech.cyou/en/projects", "statusCode": 301 },
+    { "source": "/blog/:path*", "destination": "https://www.imrantech.cyou/en/blog", "statusCode": 301 },
+    { "source": "/about/:path*", "destination": "https://www.imrantech.cyou/en/about", "statusCode": 301 },
+    { "source": "/privacy/:path*", "destination": "https://www.imrantech.cyou/en/privacy", "statusCode": 301 },
+    { "source": "/contact/:path*", "destination": "https://www.imrantech.cyou/en#contact", "statusCode": 301 },
+    { "source": "/cv", "destination": "https://www.imrantech.cyou/assets/imran_ahmedcv.pdf", "statusCode": 301 },
+    { "source": "/resume", "destination": "https://www.imrantech.cyou/assets/imran_ahmedcv.pdf", "statusCode": 301 },
+    { "source": "/sitemap.xml", "destination": "https://www.imrantech.cyou/sitemap.xml", "statusCode": 301 },
+    { "source": "/:path+", "destination": "https://www.imrantech.cyou/en", "statusCode": 301 }
   ]
 }
